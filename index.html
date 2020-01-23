@@ -68,10 +68,26 @@
         <div class="blog-articles">
             <h2>Blog Articles</h2>
             <div class="blog-teasers">
-                <a href="#"></a>
-                <a href="#"></a>
-                <a href="#"></a>
-                <a href="#"></a>
+                <div class="one">
+                    <a href="#">
+                        <img src="./images/blog1.jpg" alt="blog picture">
+                    </a>
+                </div>
+                <div class="two">
+                    <a href="#">
+                        <img src="./images/blog2.jpg" alt="blog picture">
+                    </a>
+                </div>
+                <div class="three">
+                    <a href="#">
+                        <img src="./images/blog3.jpg" alt="blog picture">
+                    </a>
+                </div>
+                <div class="four">
+                    <a href="#">
+                        <img src="./images/blog4.jpg" alt="blog picture">
+                    </a>
+                </div>
             </div>
         </div>
     </main>
@@ -112,20 +128,24 @@
             subNav.style.display = 'none';
         }
 
-        $('.hero-sm').slick({
-            arrows: false,
-            dots: true,
-            draggable: true,
-            swipe: true,
-            toucheToMove: true
-        })
-        $('.hero-lg').slick({
-            arrows: false,
-            dots: true,
-            draggable: true,
-            swipe: true,
-            toucheToMove: true
-        })
+        if ($('.hero-lg').css('display') === 'none') {
+            $('.hero-sm').slick({
+                arrows: false,
+                dots: true,
+                draggable: true,
+                swipe: true,
+                toucheToMove: true
+            })
+        }
+        if ($('.hero-sm').css('display') === 'none') {
+            $('.hero-lg').slick({
+                arrows: false,
+                dots: true,
+                draggable: true,
+                swipe: true,
+                toucheToMove: true
+            })
+        }
     </script>
 </body>
 </html>
