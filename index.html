@@ -40,14 +40,19 @@
     </header>
     <nav id="lg-nav">
         <div class="nav-body">
-            <div class="nav-links">
-                <a href="#">HOME</a>
-                <a href="#">CRUISES</a>
-                <a href="#">AGENTS</a>
-                <a href="#" class="active">BOOK</a>
-            </div>
-            <div class="nav-search">
+            <ul id="lg-dd-menu">
+                <li class="lg-dd-item"><a href="#">HOME</a></li>
+                <li class="lg-dd-item"><a href="#">CRUISES</a></li>
+                <li class="lg-dd-item"><a href="#" onclick="lgSubMenu()">AGENTS &#9660;</a></li>
+                <li id="lg-dd-sub-menu">
+                    <a href="#">&bull; LINK 1</a>
+                    <a href="#">&bull; LINK 2</a>
+                </li>
+                <li class="lg-dd-item"><a href="#">BOOK</a></li>
+            </ul>
+            <div class="search">
                 <input type="search">
+                <button><img src="./images/search-icon.png" alt="search icon"></button>
             </div>
         </div>
     </nav>
@@ -68,24 +73,32 @@
         <div class="blog-articles">
             <h2>Blog Articles</h2>
             <div class="blog-teasers">
-                <div class="one">
-                    <a href="#">
-                        <img src="./images/blog1.jpg" alt="blog picture">
+                <div class="blogItem">
+                    <a href="#" class="blogLink">
+                        <img class="blogImg" src="./images/blog1.jpg" alt="blog picture">
+                        <h4 class="blogH4">Tropical Vacation</h4>
+                        <p class="blogP">April 2, 2019</p>
                     </a>
                 </div>
-                <div class="two">
-                    <a href="#">
-                        <img src="./images/blog2.jpg" alt="blog picture">
+                <div class="blogItem">
+                    <a href="#" class="blogLink">
+                        <img class="blogImg" src="./images/blog2.jpg" alt="blog picture">
+                        <h4 class="blogH4">Take A Vacation</h4>
+                        <p class="blogP">May 2, 2019</p>
                     </a>
                 </div>
-                <div class="three">
-                    <a href="#">
-                        <img src="./images/blog3.jpg" alt="blog picture">
+                <div class="blogItem">
+                    <a href="#" class="blogLink">
+                        <img class="blogImg" src="./images/blog3.jpg" alt="blog picture">
+                        <h4 class="blogH4">Vacation Spots</h4>
+                        <p class="blogP">June 2, 2019</p>
                     </a>
                 </div>
-                <div class="four">
-                    <a href="#">
-                        <img src="./images/blog4.jpg" alt="blog picture">
+                <div class="blogItem">
+                    <a href="#" class="blogLink">
+                        <img class="blogImg" src="./images/blog4.jpg" alt="blog picture">
+                        <h4 class="blogH4">The Cruise Ship</h4>
+                        <p class="blogP">July 2, 2019</p>
                     </a>
                 </div>
             </div>
@@ -93,7 +106,49 @@
     </main>
 
     <footer>
-        <p>©2019 &bull; Austin Wright &bull; Login</p>
+        <div class="footer-info">
+            <div class="contact-us">
+                <h2>Contact Us</h2>
+                <p>
+                    Cabot Cruises<br>
+                    1268 E Center St.<br>
+                    Spanish Fork, UT 84660
+                </p>
+                <h2>Phone:</h2>
+                <p><a href="tel:+18005559450">1-800-555-9450</a></p>
+                <h2>Hours of Operation:</h2>
+                <p>Monday - Friday 9am - 5pm</p>
+            </div>
+            <div class="newsletter">
+                <h2>News Letter</h2>
+                <p>
+                    Subscribe to our email list and stay up-to-date with our honest offers and latest specials.
+                </p>
+                <input type="email">
+                <button>Subscribe</button>
+            </div>
+            <div class="why-cabot">
+                <h2>Why Cabot Cruises</h2>
+                <p>
+                    Cabot Cruises is a travel agency providing the best cruise deals on our online travel website. 
+                    We can help you with all inclusive vaca8ons including discounted cruises.
+                    </br>
+                    We do not sell travel to residents of Delaware, Iowa, Florida, Hawaii and Washington state because 
+                    those states are just weird. If you are a resident of one of these states, call your congressman and tell them 
+                    to change the regulaions.
+                </p>
+            </div>
+        </div>
+        <div class="social-wrap">
+            <div class="social-icons">
+                <a><img src="./images/facebook.svg" alt="facebook logo"></a>
+                <a><img src="./images/instagram.svg" alt="instagram logo"></a>
+                <a><img src="./images/twitter.svg" alt="twitter logo"></a>
+                <a><img src="./images/youtube.svg" alt="youtube logo"></a>
+                <a><img src="./images/linkedin.svg" alt="linkedin logo"></a>
+            </div>
+        </div>
+        <p class="copyright">© 2020 &bull; Austin Wright</p>
     </footer>
 
     <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="  crossorigin="anonymous"></script>
@@ -104,6 +159,7 @@
         const ddMenu = document.getElementById('dd-menu');
         const ddSubMenu = document.getElementById('dd-sub-menu');
         const subNav = document.getElementById('sub-nav');
+        const lgDdSubMenu = document.getElementById('lg-dd-menu');
         function showMenu() {
             menu.style.display = "none";
             x.style.display = "initial";
@@ -127,6 +183,12 @@
         function subNavMenuOff() {
             subNav.style.display = 'none';
         }
+        function lgSubMenu() {
+            lgDdSubMenu.style.display = lgDdSubMenu.style.display === 'none' ?
+            'flex'
+            :
+            'none';
+        }
 
         if ($('.hero-lg').css('display') === 'none') {
             $('.hero-sm').slick({
@@ -145,6 +207,21 @@
                 swipe: true,
                 toucheToMove: true
             })
+        }
+    </script>
+    <script type="application/ld+json">
+        {
+            "@type": "TravelAgency",
+            "name": "Cabot Cruises",
+            "openHours": "Mon-Fri 09:00-17:00",
+            "phone": "+18005559450",
+            "address": {
+                "@type": "PostalAddress",
+                "street": "1268 E Center St.",
+                "city": "Spanish Fork",
+                "state": "UT",
+                "zipCode": "84660"
+            }
         }
     </script>
 </body>

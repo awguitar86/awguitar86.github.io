@@ -3,11 +3,18 @@
 header {
     width: 75rem;
 }
-
-nav {
-    width: 75rem;
-    
+#lg-nav {
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
+.nav-body {
+    width: 75rem;
+}
+#lg-dd-menu {
+    padding-left: 0;
+    width: 50%;
+  }
 
 main {
     width: 75rem;
@@ -15,3 +22,20 @@ main {
     align-items: center;
     justify-content: center;
 }
+.blog-articles {
+    width: 100%;
+}
+.blog-teasers {
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(1, auto);
+}
+.blogH4 {
+    font-size: 16pt;
+}
+
+
+.footer-info {
+    width: 75rem;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(1, auto);
+  }
