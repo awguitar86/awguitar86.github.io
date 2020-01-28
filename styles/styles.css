@@ -722,29 +722,32 @@ footer .copyright {
   @import url("https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap");
   #lg-nav {
     display: flex;
+    justify-content: center;
+    align-items: center;
     width: 100vw;
-    height: 50px;
     background: #197bbd;
   }
 
   .nav-body {
     width: 95%;
-    height: 100%;
+    height: 40px;
     display: flex;
+    flex-direction: row;
     align-items: center;
     justify-content: space-between;
   }
 
   #lg-dd-menu {
-    width: 60%;
+    width: 100%;
     display: flex;
     align-items: center;
-    justify-content: space-evenly;
+    justify-content: flex-start;
     list-style: none;
+    padding-left: 0;
   }
 
   .lg-dd-item {
-    width: 100%;
+    width: 25%;
     height: 100%;
     display: flex;
     align-items: center;
@@ -755,25 +758,39 @@ footer .copyright {
     text-decoration: none;
   }
 
-  #lg-dd-sub-menu {
+  #sub-menu-nav {
+    width: 25%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    position: relative;
+  }
+  #sub-menu-nav .sub-menu-nav-link {
+    color: white;
+    text-decoration: none;
+  }
+
+  #sub-nav {
     width: 100%;
     display: none;
     flex-direction: column;
-    align-items: center;
-    justify-content: center;
-  }
-  #lg-dd-sub-menu a {
-    width: 100%;
-    height: 40px;
-    font-family: "Montserrat", sans-serif;
-    color: white;
     background: #197bbd;
-    border-bottom: solid 1px white;
+    position: absolute;
+    top: 28px;
+    z-index: 1000;
+  }
+  #sub-nav a {
+    font-family: "Montserrat", sans-serif;
+    font-size: 11pt;
+    color: white;
     text-decoration: none;
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;
-    padding-left: 40px;
+    padding: 15px 0px 15px 10px;
+    border-bottom: solid 1px white;
+    transition: ease-in-out 0.2s;
+  }
+  #sub-nav a:hover {
+    background: #2797e2;
   }
 
   .search {
@@ -841,9 +858,12 @@ footer .copyright {
     width: 75rem;
   }
 
-  #lg-dd-menu {
-    padding-left: 0;
-    width: 50%;
+  .lg-dd-item {
+    width: 13%;
+  }
+
+  #sub-menu-nav {
+    width: 13%;
   }
 
   main {
